@@ -1,0 +1,19 @@
+<input  (ngModelChange)="onSearchChange($event)" placeholder="Search food items" />
+<select   (ngModelChange)="onSortChange($event)">
+  <option value="">Sort by</option>
+  <option value="name">Name</option>
+  <option value="rating">Rating</option>
+</select>
+
+<div *ngFor="let foodItem of foodItems">
+  <div>
+    <h3>{{ foodItem.name }}</h3>
+    <p>{{ foodItem.description }}</p>
+    <button >View Details</button>
+  </div>
+</div>
+
+<div>
+  <button (click)="onPageChange(pageIndex - 1)" [disabled]="pageIndex === 1">Previous</button>
+  <button (click)="onPageChange(pageIndex + 1)" [disabled]="foodItems.length < pageSize">Next</button>
+</div>

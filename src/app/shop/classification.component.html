@@ -1,0 +1,19 @@
+<div>
+    <button (click)="classifyData()">Classify Data</button>
+    <button (click)="importClassifiedFoods()">Import Classified Foods</button>
+  </div>
+  
+  <div *ngIf="recommendations.length > 0">
+    <h3>Recommendations:</h3>
+    <div *ngFor="let item of recommendations">
+      <p><strong>{{ item.NameFood }}</strong></p>
+      <p>{{ item.Ingredients }}</p>
+      <p>{{ item.Nutrients }}</p>
+      <p>{{ item.Rating }}</p>
+    </div>
+  </div>
+  
+  <div *ngIf="recommendations.length === 0">
+    <p>No recommendations available.</p>
+  </div>
+  

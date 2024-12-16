@@ -1,0 +1,12 @@
+<div *ngIf="foodItem">
+    <h2>{{ foodItem.name }}</h2>
+    <p>{{ foodItem.description }}</p>
+    <p><strong>Ingredients:</strong> {{ foodItem.ingredients }}</p>
+    <p><strong>Rating:</strong> {{ foodItem.rating }}</p>
+    
+    <div>
+      <input  placeholder="Enter rating (1-5)" />
+      <button (click)="addRating()">Add Rating</button>
+    </div>
+  </div>
+  
